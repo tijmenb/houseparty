@@ -7,8 +7,11 @@ class CardCreator
   end
 
   def create
-    card = Trello::Card.create(card_attributes)
-    card.add_attachment(listing['image_url'])
+    if listing['image_url']
+      card = Trello::Card.create(card_attributes)
+      card.add_attachment(listing['image_url'])
+    end
+
     PostableListings.exclude(listing['listing_id'])
   end
 

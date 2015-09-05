@@ -2,14 +2,27 @@
 
 Sends Zoopla listings to Trello.
 
-### Installation
+### Local installation
 
 ```sh
-git clone git@github.com:tijmenb/houseparty.git
-cd houseparty
-bundle install
+$ git clone git@github.com:tijmenb/houseparty.git
+$ cd houseparty
+$ bundle install
 ```
 
+Run the tests:
+
+```sh
+bundle exec rspec
+```
+
+### Deploy
+
+```sh
+$ git clone git@github.com:tijmenb/houseparty.git
+$ heroku create my-houseparty
+$ git push heroku
+```
 
 ## API Keys
 

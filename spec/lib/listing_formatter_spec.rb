@@ -45,7 +45,7 @@ describe ListingFormatter do
 
       expect(payload).to eql(
         name: "Moresby Road, London E5 - £1517",
-        desc: "A long description.\n\n### http://www.zoopla.co.uk/the-url"
+        desc: "A long description.\n\n### http://www.zoopla.co.uk/the-url\n\nhttps://www.google.com/maps/dir/52+Wharf+Rd,+London+N1/Moresby+Road,+London+E5\n\nhttps://www.google.com/maps/dir/Holborn,+London,+UK/Moresby+Road,+London+E5"
       )
     end
   end

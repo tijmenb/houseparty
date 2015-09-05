@@ -22,6 +22,12 @@ private
     [
       source.fetch('description'),
       "### " + source.fetch('details_url'),
+      "https://www.google.com/maps/dir/52+Wharf+Rd,+London+N1/#{safe_location}",
+      "https://www.google.com/maps/dir/Holborn,+London,+UK/#{safe_location}",
     ].join("\n\n")
+  end
+
+  def safe_location
+    source.fetch('displayable_address').gsub(' ', '+')
   end
 end

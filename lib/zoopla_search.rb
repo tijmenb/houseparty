@@ -2,24 +2,20 @@ class ZooplaSearch
   BASE_QUERY = {
     api_key: Configs.fetch('ZOOPLA_API_KEY'),
     order_by: 'age',
+    listing_status: 'rent',
+    furnished: 'unfurnished',
+    page_size: 50,
+    include_rented: false,
+    minimum_price: (1000 * 12) / 52,
+    maximum_price: (1500 * 12) / 52,
   }
 
   SEARCHES = [
     {
       area: 'Hackney, London',
-      listing_status: 'rent',
-      furnished: 'unfurnished',
-      include_rented: false,
-      minimum_price: 1000 / 4,
-      maximum_price: 1500 / 4,
     },
     {
       area: 'Islington, London',
-      listing_status: 'rent',
-      furnished: 'unfurnished',
-      include_rented: false,
-      minimum_price: 1000 / 4,
-      maximum_price: 1500 / 4,
     }
   ]
 

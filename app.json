@@ -1,0 +1,30 @@
+{
+  "name": "Houseparty",
+  "env": {
+    "TRELLO_API_KEY": {
+      "description": "Your Trello API key.",
+      "required": true
+    },
+    "TRELLO_MEMBER_TOKEN": {
+      "description": "The auth token for Trello.",
+      "required": true
+    },
+    "TRELLO_BOARD_ID": {
+      "description": "The ID of your board.",
+      "required": true
+    },
+    "ZOOPLA_API_KEY": {
+      "description": "Zoopla API key. See readme for instructions.",
+      "required": true
+    },
+    "RACK_ENV": {
+      "description": "The environment to run in.",
+      "value": "production",
+      "required": true
+    }
+  },
+  "addons": [
+    "redistogo:nano",
+    "scheduler"
+  ]
+}

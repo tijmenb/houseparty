@@ -16,6 +16,9 @@ class ZooplaSearch
     },
     {
       area: 'Islington, London',
+    },
+    {
+      area: 'Tower Hamlets, London',
     }
   ]
 

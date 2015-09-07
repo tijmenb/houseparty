@@ -8,7 +8,7 @@ describe ZooplaSearch do
 
       listings = ZooplaSearch.new.listings
 
-      expect(listings.size).to eql(20)
+      expect(listings.size).to eql(30)
     end
   end
 end

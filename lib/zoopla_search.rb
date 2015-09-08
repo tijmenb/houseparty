@@ -6,8 +6,8 @@ class ZooplaSearch
     furnished: 'unfurnished',
     page_size: 50,
     include_rented: false,
-    minimum_price: (1000 * 12) / 52,
-    maximum_price: (1500 * 12) / 52,
+    minimum_price: ((1000 * 12) / 52).to_i,
+    maximum_price: ((1700 * 12) / 52).to_i,
   }
 
   SEARCHES = [

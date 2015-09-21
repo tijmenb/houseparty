@@ -8,6 +8,11 @@ task :run do
   Runner.new.run
 end
 
+desc "Reset the database so that all houses will be added again"
+task :reset do
+  PostableListings.clear
+end
+
 desc "You need a valid key so that we can send stuff to trello"
 task :init do
   api_key = Configs.fetch('TRELLO_API_KEY')

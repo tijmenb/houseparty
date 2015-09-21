@@ -4,7 +4,7 @@ class ZooplaSearch
     order_by: 'age',
     listing_status: 'rent',
     furnished: 'unfurnished',
-    page_size: 50,
+    page_size: 25,
     include_rented: false,
     minimum_price: ((1000 * 12) / 52).to_i,
     maximum_price: ((1700 * 12) / 52).to_i,

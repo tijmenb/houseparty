@@ -1,4 +1,12 @@
 class ListingFormatter
+  INTERESTING_PROPERTIES = [
+    "description",
+    "num_bedrooms",
+    "available_from_date",
+    "first_published_date",
+    "agent_name",
+  ]
+
   attr_reader :source
 
   def initialize(source)
@@ -17,19 +25,20 @@ private
   def name
     address = source.fetch('displayable_address')
     price = source.fetch('rental_prices').fetch('per_month')
-    "#{address} - £#{price}"
+    area = source.fetch('area')
+    "#{address} - £#{price} (#{area})"
   end
 
   def description
     [
-      source.fetch('description'),
       "### " + source.fetch('details_url'),
-      "https://www.google.com/maps/dir/52+Wharf+Rd,+London+N1/#{safe_location}",
-      "https://www.google.com/maps/dir/Holborn,+London,+UK/#{safe_location}",
-    ].join("\n\n")
+      source.slice(*INTERESTING_PROPERTIES).map { |k,v| "**#{k}**: #{v}" },
+      "https://www.google.com/maps/dir/52+Wharf+Rd,+London+N1/#{url_safe_location}",
+      "https://www.google.com/maps/dir/133-137+Whitechapel+High+Street,+London,+UK/#{url_safe_location}",
+    ].flatten.join("\n\n")
   end
 
-  def safe_location
+  def url_safe_location
     source.fetch('displayable_address').gsub(' ', '+')
   end
 end

@@ -1,5 +1,5 @@
 require 'dotenv'
-Dotenv.load('.env.test')
+Dotenv.load('.env')
 
 require_relative './lib/all'
 
@@ -14,7 +14,7 @@ task :reset do
 end
 
 desc "You need a valid key so that we can send stuff to trello"
-task :init do
+task :init_trello do
   api_key = Configs.fetch('TRELLO_API_KEY')
   puts "Visit the following URL in your browser:"
   puts "https://trello.com/1/authorize?key=#{api_key}&scope=read,write&response_type=token&expiration=never"

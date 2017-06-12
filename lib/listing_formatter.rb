@@ -15,7 +15,9 @@ class ListingFormatter
 private
 
   def name
-    source.fetch('displayable_address') + ' - £' + source.fetch('rental_prices').fetch('per_month')
+    address = source.fetch('displayable_address')
+    price = source.fetch('rental_prices').fetch('per_month')
+    "#{address} - £#{price}"
   end
 
   def description

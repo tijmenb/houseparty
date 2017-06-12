@@ -2,10 +2,12 @@ class Runner
   INCOMING_NAME = 'Incoming Houses'
 
   def run
+    puts "Starting..."
     initialize_trello
     PostableListings.new.listings.each do |listing|
       CardCreator.new(listing, list_for_incoming).create
     end
+    puts "Finished"
   end
 
 private
@@ -18,6 +20,7 @@ private
   end
 
   def create_incoming_list
+    puts "Creating '#{INCOMING_NAME}' list"
     Trello::List.create(name: INCOMING_NAME, board_id: board.id)
   end
 

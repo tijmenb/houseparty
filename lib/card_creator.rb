@@ -8,6 +8,7 @@ class CardCreator
 
   def create
     if listing['image_url'].to_s != ""
+      puts "Creating card: #{card_attributes}"
       card = Trello::Card.create(card_attributes)
       card.add_attachment(listing['image_url'])
     end

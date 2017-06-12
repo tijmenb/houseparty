@@ -33,6 +33,8 @@ class ZooplaSearch
 private
 
   def search_zoopla(search_query)
-    HTTParty.get(BASE_URL, query: BASE_QUERY.merge(search_query)).body
+    query = BASE_QUERY.merge(search_query)
+    puts "Executing Zoopla search: #{query}"
+    HTTParty.get(BASE_URL, query: query).body
   end
 end

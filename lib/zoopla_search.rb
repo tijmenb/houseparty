@@ -22,7 +22,7 @@ class ZooplaSearch
     }
   ]
 
-  BASE_URL = 'http://api.zoopla.co.uk/api/v1/property_listings.json'
+  BASE_URL = 'https://api.zoopla.co.uk/api/v1/property_listings.json'
 
   def listings
     SEARCHES.map do |search_query|

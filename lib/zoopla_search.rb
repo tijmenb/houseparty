@@ -16,6 +16,9 @@ class ZooplaSearch
     {
       area: 'Peckham, London',
     },
+    {
+      area: 'Hackney, London',
+    },
   ]
 
   BASE_URL = 'https://api.zoopla.co.uk/api/v1/property_listings.json'

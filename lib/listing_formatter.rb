@@ -26,12 +26,8 @@ private
     address = source.fetch('displayable_address')
     price = source.fetch('rental_prices').fetch('per_month')
     area = source.fetch('area')
-    if source['available_from_date']
-      from = Date.parse(source['available_from_date'])
-      "#{address} - £#{price} (#{area}, from #{from})"
-    else
-      "#{address} - £#{price} (#{area})"
-    end
+    from = source.fetch('available_from_date')
+    "#{address} - £#{price} (#{area}, from #{from})"
   end
 
   def description

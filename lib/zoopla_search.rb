@@ -27,9 +27,21 @@ class ZooplaSearch
     SEARCHES.map do |search_query|
       JSON.parse(search_zoopla(search_query))['listing'].each do |source|
         source["area"] = search_query[:area].gsub(', London', '')
+        unless source['available_from_date']
+          puts "No `available_from_date`, skipping"
+          next
+        end
+
+        source["from"] = Date.parse(source["available_from_date"])
+
+        unless source["from"] > Date.parse("2017-08-04") && source["from"] < Date.parse("2017-10-01")
+          puts "Not available in aug/sept: #{source["from"]}"
+          next
+        end
+
         source
       end
-    end.flatten
+    end.flatten.compact
   end
 
 private

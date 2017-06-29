@@ -34,7 +34,9 @@ class ZooplaSearch
 
         source["from"] = Date.parse(source["available_from_date"])
 
-        unless source["from"] > Date.parse("2017-08-04") && source["from"] < Date.parse("2017-10-01")
+        # source["from"] > Date.parse("2017-08-04") &&
+
+        unless source["from"] < Date.parse("2017-10-01")
           puts "Not available in aug/sept: #{source["from"]}"
           next
         end

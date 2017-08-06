@@ -26,7 +26,7 @@ private
     address = source.fetch('displayable_address')
     price = source.fetch('rental_prices').fetch('per_month')
     area = source.fetch('area')
-    from = source.fetch('available_from_date')
+    from = source['available_from_date']
     "#{address} - £#{price} (#{area}, from #{from})"
   end
 

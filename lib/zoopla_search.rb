@@ -14,7 +14,10 @@ class ZooplaSearch
 
   SEARCHES = [
     {
-      area: 'Peckham, London',
+      area: 'Bethnal Green, London',
+    },
+    {
+      area: 'Islington, London',
     },
     {
       area: 'Hackney, London',

@@ -9,7 +9,7 @@ class ZooplaSearch
     include_rented: false,
     minimum_price: ((1400 * 12) / 52).to_i,
     maximum_price: ((1900 * 12) / 52).to_i,
-    minimum_beds: '2',
+    minimum_beds: '1',
   }
 
   SEARCHES = [

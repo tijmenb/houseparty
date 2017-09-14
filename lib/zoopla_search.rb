@@ -30,7 +30,7 @@ class ZooplaSearch
     SEARCHES.map do |search_query|
       JSON.parse(search_zoopla(search_query))['listing'].each do |source|
         source["area"] = search_query[:area].gsub(', London', '')
-        source["from"] = Date.parse(source["available_from_date"])
+        source["from"] = Date.parse(source["available_from_date"]) rescue nil
         source
       end
     end.flatten.compact
